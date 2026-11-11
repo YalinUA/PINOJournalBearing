@@ -11,6 +11,16 @@ sine layers along the axis, so the edge conditions hold exactly; the groove cond
 PINO adds the discrete JFO (Jakobsson-Floberg-Olsson) residual of the reference solver and a complementarity term to
 the data loss. This physics loss can also be evaluated on bearings without solver labels.
 
+## Representative result
+
+![Pressure of a heavily loaded bearing outside the labelled range](docs/representative_result.png)
+
+A test bearing at eccentricity ratio 0.93, outside the labelled training range (0.1-0.9). Top: solver pressure and
+film fraction. Below: predicted pressure (left) and pressure error (right) of the data-only FNO, the PINO trained with
+unlabelled bearings from the training range, and the PINO trained with unlabelled bearings from the extrapolation
+range. The data-only models underpredict the pressure peak (errors 16.4% and 15.0%); the PINO that evaluates the JFO
+residual on unsolved bearings from this range recovers it (3.0%) without any new solver runs.
+
 ## Files
 
 - `pino.py`: network (FNO2d with Fourier or Fourier-sine layers)
