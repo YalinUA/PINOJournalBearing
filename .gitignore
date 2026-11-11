@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.npz
+*.npy
+*.pt
+*_results.json
+*.log
